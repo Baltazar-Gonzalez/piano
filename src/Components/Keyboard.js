@@ -78,14 +78,14 @@ const isRecording = () =>{
   return document.getElementById("record").classList.contains("active")
 }
 const playSong = () =>{
-    songNotes.map(e => {
-      times.push(setTimeout(()=> playNote(e.note, e.key), e.startTime)
-  )})
-    
+  songNotes.map(e => {
+      times.push(setTimeout(()=> playNote(e.note, e.key), e.startTime))
+  return true
+})    
     endTimes = setTimeout(()=> document.getElementById("repeat").classList.remove("active"), recordingEndTime)
-}
+  }
 const stopSong = () => {
-  times.forEach(e => clearTimeout(e))
+    times.forEach(e => clearTimeout(e))
     clearTimeout(endTimes)
     times=[]
     document.getElementById("loop").classList.remove("active")
